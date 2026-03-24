@@ -26,7 +26,7 @@
   .hero { background: var(--red); color: var(--white); text-align: center; padding: 64px 24px 56px; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23600027' fill-opacity='0.35'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
   .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; position: relative; margin-bottom: 12px;  letter-spacing: -0.5px; }
-    .hero-eyebrow { font-weight: 400; letter-spacing: 4px; font-size: 11px;  color: var(--white); margin-bottom: 16px; position: relative; }
+    .hero-eyebrow { font-weight: 400; letter-spacing: 4px; font-size: 15px;  color: var(--white); margin-bottom: 16px; position: relative; }
   .hero h1 em { font-style: normal; color: var(--red); }
 
     .hero-sub { font-size: 15px; font-weight: 300; color: var(--white); max-width: 480px; margin: 0 auto; line-height: 1.6; position: relative; }
@@ -234,7 +234,7 @@ function getStageDoorUrl(venue) {
 function renderShows(shows) {
   const box = document.getElementById('now-playing-box');
   if (!box) return;
-  if (!shows.length) { box.innerHTML = ''; return; }
+  if (!shows.length) { box.innerHTML = '<div style="color:rgba(255,255,255,0.7);font-size:13.5px;">👻 No shows this week, please check back next week.</div>'; return; }
   box.innerHTML = shows.map(s => {
     const doorUrl = getStageDoorUrl(s.venue);
     return `<div style="border-bottom:1px solid rgba(255,255,255,0.12);padding:16px 0;display:flex;gap:16px;align-items:flex-start;"><div style="flex-shrink:0;font-size:1.8rem;">${s.emoji||'🎭'}</div><div style="flex:1;"><div style="font-size:1rem;font-weight:800;color:var(--white);letter-spacing:0.3px;margin-bottom:6px;">${s.title}</div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;"><span style="font-size:10px;font-weight:700;letter-spacing:1.5px;background:rgba(255,255,255,0.12);color:var(--sand);padding:3px 10px;border-radius:2px;">${s.venue}</span>${s.dates?`<span style="font-size:10px;font-weight:700;letter-spacing:1.5px;background:rgba(224,45,71,0.3);color:#ffb3bc;padding:3px 10px;border-radius:2px;">${s.dates}</span>`:''}</div>${doorUrl?`<a href="${doorUrl}" target="_blank" style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--sand);text-decoration:none;border:1px solid rgba(255,255,255,0.3);padding:4px 12px;border-radius:2px;display:inline-block;">📍 Stage Door</a>`:''}</div></div>`;
@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="divider-line" style="margin:0; flex-shrink:0;"></div>
     <h2 class="section-title" style="margin:0;">Our History</h2>
   </div>
-  <p class="section-intro">Australia's oldest continuously operating theatre, spanning nearly 190 years of drama, passionr-demolition, and survival.</p>
+  <p class="section-intro">Australia's oldest continuously operating theatre, spanning nearly 190 years of drama, passion, demolition, and survival.</p>
   <div class="hist-timeline">
 
     <div class="hist-entry">
