@@ -155,6 +155,26 @@
   .tab-btn-2line span:first-child { font-size: 10.5px; }
   .tab-btn-2line span:last-child { font-size: 8.5px; letter-spacing: 1.5px; color: inherit; opacity: 0.75; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Induction tab styles */
+  .induction-alert { background: var(--burgundy); border-radius: 4px; padding: 20px 24px; color: var(--white); margin-bottom: 28px; display: flex; gap: 16px; align-items: flex-start; }
+  .induction-alert-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .induction-alert p { font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.9); margin-top: 4px; }
+  .induction-alert strong { color: var(--white); }
+  .induction-step { background: var(--white); border-radius: 4px; box-shadow: 0 2px 14px var(--soft-shadow); margin-bottom: 12px; overflow: hidden; }
+  .induction-step-header { display: flex; align-items: center; gap: 16px; padding: 18px 22px; border-left: 5px solid var(--red); }
+  .induction-step-num { font-size: 1.4rem; font-weight: 900; color: var(--red); flex-shrink: 0; line-height: 1; min-width: 28px; }
+  .induction-step-title { font-size: 0.95rem; font-weight: 800; color: var(--black); letter-spacing: 0.3px; }
+  .induction-step-body { padding: 0 22px 18px 65px; }
+  .induction-step-body ul { list-style: none; margin: 0; padding: 0; }
+  .induction-step-body ul li { font-size: 13.5px; line-height: 1.7; color: #1a1010; padding: 3px 0; padding-left: 16px; position: relative; }
+  .induction-step-body ul li::before { content: '—'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+  .induction-step-body ul ul { margin-top: 4px; }
+  .induction-step-body ul ul li { color: #3a2020; font-size: 13px; }
+  .induction-step-body ul ul li::before { content: '·'; color: var(--burgundy); }
+  .induction-assembly { background: #fff8e1; border-radius: 4px; border-left: 5px solid var(--orange); padding: 16px 20px; margin-bottom: 10px; }
+  .induction-assembly .assembly-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
+  .induction-assembly p { font-size: 13.5px; line-height: 1.7; color: #1a1010; }
 </style>
 </head>
 <body>
@@ -171,6 +191,7 @@
   <button class="tab-btn active" onclick="showSection('venues', this)">Our Venues</button>
   <button class="tab-btn" onclick="showSection('doors', this)">Access</button>
   <button class="tab-btn" onclick="showSection('contacts', this)">Key Contacts</button>
+  <button class="tab-btn" onclick="showSection('induction', this)">Induction</button>
   <button class="tab-btn" onclick="showSection('restaurants', this)">Food &amp; Essentials</button>
   <button class="tab-btn" onclick="showSection('around', this)">Getting Around</button>
   <button class="tab-btn" onclick="showSection('history', this)">History</button>
@@ -571,6 +592,179 @@ document.addEventListener('DOMContentLoaded', function() {
     <h4>🎭 What This Means for Your Show</h4>
     <p style="font-size:13.5px;line-height:1.75;color:rgba(255,255,255,0.9);margin-bottom:12px;">At the beginning of your show, we kindly request that the <strong style="color:var(--white);">house lights are dimmed by half for 70 seconds</strong> while the Acknowledgement is played to the audience.</p>
     <p style="font-size:13.5px;line-height:1.75;color:rgba(255,255,255,0.7);">Our front-of-house staff will maintain a lockout on the doors during this time, ensuring no audience members enter. No action is required from your team. We'll take care of everything.</p>
+  </div>
+
+</section>
+
+<!-- ═══ INDUCTION ═══ -->
+<section id="induction" class="section">
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
+    <div class="divider-line" style="margin:0; flex-shrink:0;"></div>
+    <h2 class="section-title" style="margin:0;">Venue Induction</h2>
+  </div>
+  <p class="section-intro">Your Duty Technician will walk through this induction with all cast and crew on arrival. It covers emergency procedures, facilities, and venue-specific safety information.</p>
+
+  <div class="induction-alert">
+    <div class="induction-alert-icon">⚠️</div>
+    <div>
+      <strong>Required for all visiting cast and crew</strong>
+      <p>This induction must be completed before any work begins in the venue. A signed checklist is held on file by Theatre Royal staff. If you have any questions, speak to your Duty Technician or Floor Mechanist.</p>
+    </div>
+  </div>
+
+  <!-- 1. Introductions -->
+  <div class="induction-step">
+    <div class="induction-step-header">
+      <div class="induction-step-num">1</div>
+      <div class="induction-step-title">Introductions</div>
+    </div>
+    <div class="induction-step-body">
+      <ul>
+        <li>Your Duty Technician will introduce themselves</li>
+        <li>All Theatre Royal staff on shift will introduce themselves and their role</li>
+        <li>Visiting company key personnel to introduce themselves</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2. Evacuation -->
+  <div class="induction-step">
+    <div class="induction-step-header">
+      <div class="induction-step-num">2</div>
+      <div class="induction-step-title">Venue Evacuation Procedure</div>
+    </div>
+    <div class="induction-step-body">
+      <ul>
+        <li>The Stage Area Warden is generally the Floor Mechanist</li>
+        <li>The alarm is loud — you will not miss it</li>
+        <li>Exit the building quickly and calmly</li>
+        <li>Exit pathways and doors for all areas being used by the event:
+          <ul>
+            <li>Studio Stage</li>
+            <li>Studio auditorium and control room</li>
+            <li>Studio back of house and dressing rooms</li>
+            <li>Theatre Royal stage and fire curtain</li>
+            <li>Theatre Royal dressing rooms</li>
+            <li>Loading dock and laundry</li>
+            <li>Level 1 green room and dressing rooms</li>
+            <li>Theatre Royal sub-stage and orchestra pit</li>
+            <li>Theatre Royal auditorium</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3. Assembly points -->
+  <div class="induction-step">
+    <div class="induction-step-header">
+      <div class="induction-step-num">3</div>
+      <div class="induction-step-title">Evacuation Assembly Locations</div>
+    </div>
+    <div class="induction-step-body" style="padding-top:12px;">
+      <div class="induction-assembly">
+        <div class="assembly-label">Assembly Point A</div>
+        <p><strong>UTAS Fountainside carpark</strong> — for all cast and crew during bump-in/out and rehearsal, and for cast and crew onstage or backstage during shows.</p>
+      </div>
+      <div class="induction-assembly">
+        <div class="assembly-label">Assembly Point B</div>
+        <p><strong>Collins Street near Sun Street intersection</strong> — for cast and crew in the auditorium during shows who cannot use BOH exits due to the fire curtain.</p>
+      </div>
+      <ul style="margin-top:8px;">
+        <li>Always follow the warden's instructions — they will be wearing a hi-vis vest and hard hat</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4. First Aid -->
+  <div class="induction-step">
+    <div class="induction-step-header">
+      <div class="induction-step-num">4</div>
+      <div class="induction-step-title">Location of First Aid Kits and Defibrillator</div>
+    </div>
+    <div class="induction-step-body">
+      <ul>
+        <li>🩺 First Aid — Green Room, Level 1</li>
+        <li>🩺 First Aid — Scene Dock, Mainstage, Level 2</li>
+        <li>🩺 First Aid — Studio Stage Manager's Console, Level 3</li>
+        <li>❤️ Defibrillator — Scene Dock, Mainstage</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 6. Keep exits clear -->
+  <div class="induction-step">
+    <div class="induction-step-header">
+      <div class="induction-step-num">5</div>
+      <div class="induction-step-title">Keep Exit Pathways Clear</div>
+    </div>
+    <div class="induction-step-body">
+      <ul>
+        <li>All cast and crew must keep exit pathways clear at all times</li>
+        <li>No costume racks, road cases, or equipment blocking access or egress</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 7. Food and drink -->
+  <div class="induction-step">
+    <div class="induction-step-header">
+      <div class="induction-step-num">6</div>
+      <div class="induction-step-title">Food and Drink on Stage</div>
+    </div>
+    <div class="induction-step-body">
+      <ul>
+        <li>No open food or drink containers on stage</li>
+        <li>Closed drink bottles only</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 8. Incident reporting -->
+  <div class="induction-step">
+    <div class="induction-step-header">
+      <div class="induction-step-num">7</div>
+      <div class="induction-step-title">Incident Reporting and WHS Concerns</div>
+    </div>
+    <div class="induction-step-body">
+      <ul>
+        <li>All cast and crew should know who to contact for incident reporting or any WHS concerns</li>
+        <li>Contact your Duty Technician or Floor Mechanist</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 9. Show stop -->
+  <div class="induction-step">
+    <div class="induction-step-header">
+      <div class="induction-step-num">8</div>
+      <div class="induction-step-title">Show Stop and Non-Fire Emergency Procedures</div>
+    </div>
+    <div class="induction-step-body">
+      <ul>
+        <li>Your Duty Technician will walk through show stop procedure specific to your production</li>
+        <li>Non-fire emergency procedures will be covered during this induction</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 10. Venue/show specific -->
+  <div class="induction-step">
+    <div class="induction-step-header">
+      <div class="induction-step-num">9</div>
+      <div class="induction-step-title">Venue and Show-Specific WHS Information</div>
+    </div>
+    <div class="induction-step-body">
+      <ul>
+        <li><strong>Accessibility</strong> — direct to stage manager or production manager to discuss any cast or crew accessibility requirements we can assist with</li>
+        <li><strong>Child Safety</strong> — confirm WWVP accredited personnel and key points from the Risk Assessment</li>
+        <li>Any other venue or show-specific safety information relevant to this event</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip-box" style="margin-top:24px;">
+    <strong>📋 Sign-off:</strong> A physical induction checklist will be completed and signed by your company contact and a Theatre Royal staff member. This is kept on file for the duration of your season. If you have any questions before your first access day, contact us via the Key Contacts tab.
   </div>
 
 </section>
