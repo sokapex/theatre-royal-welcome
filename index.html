@@ -188,8 +188,8 @@
 
 <div class="nav-tabs-wrap">
 <nav class="nav-tabs">
-  <button class="tab-btn active" onclick="showSection('venues', this)">Our Venues</button>
-  <button class="tab-btn" onclick="showSection('doors', this)">Access</button>
+  <button class="tab-btn active" onclick="showSection('doors', this)">Access</button>
+  <button class="tab-btn" onclick="showSection('venues', this)">Our Venues</button>
   <button class="tab-btn" onclick="showSection('contacts', this)">Key Contacts</button>
   <button class="tab-btn" onclick="showSection('induction', this)">Induction</button>
   <button class="tab-btn" onclick="showSection('restaurants', this)">Food &amp; Essentials</button>
@@ -200,16 +200,7 @@
 </div>
 
 <!-- ═══ VENUES ═══ -->
-<section id="venues" class="section active">
-  <div style="margin-bottom: 36px;">
-    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-      <div class="divider-line" style="margin:0;"></div>
-      <span style="font-size:2rem; font-weight:800; letter-spacing:-0.5px; color:var(--burgundy); white-space:nowrap;">Now Playing</span>
-    </div>
-    <div id="now-playing-box" style="background:var(--burgundy); border-radius:4px; padding:24px; color:var(--white);">
-      <div style="color:rgba(255,255,255,0.6); font-size:13px;">🎭 Loading…</div>
-    </div>
-  </div>
+<section id="venues" class="section">
 
   <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
     <div class="divider-line" style="margin:0; flex-shrink:0;"></div>
@@ -297,7 +288,17 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!-- ═══ ACCESS ═══ -->
-<section id="doors" class="section">
+<section id="doors" class="section active">
+  <div style="margin-bottom: 36px;">
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <div class="divider-line" style="margin:0;"></div>
+      <span style="font-size:2rem; font-weight:800; letter-spacing:-0.5px; color:var(--burgundy); white-space:nowrap;">Now Playing</span>
+    </div>
+    <div id="now-playing-box" style="background:var(--burgundy); border-radius:4px; padding:24px; color:var(--white);">
+      <div style="color:rgba(255,255,255,0.6); font-size:13px;">🎭 Loading…</div>
+    </div>
+  </div>
+
   <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
     <div class="divider-line" style="margin:0; flex-shrink:0;"></div>
     <h2 class="section-title" style="margin:0;">Stage Doors &amp; Access</h2>
